@@ -15,7 +15,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-
       # https://github.com/SonarSource/sonarqube-scan-action
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@master
@@ -23,7 +22,6 @@ jobs:
           args: >
             -X
         env:
-#          GITHUB_TOKEN: ${{ github.token }}
           SONAR_TOKEN: ${{ secrets.sonar_token }}
           SONAR_HOST_URL: ${{ secrets.sonar_host_url }}
 
